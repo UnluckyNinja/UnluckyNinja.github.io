@@ -1,9 +1,9 @@
 name: Deploy github pages
 
-on:
-  push:
-    branches:
-    - workspace
+#on:
+#  push:
+#    branches:
+#    - workspace
 
 jobs:
   build-and-deploy:
