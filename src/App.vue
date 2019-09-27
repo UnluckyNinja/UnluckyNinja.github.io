@@ -74,7 +74,7 @@ body {
 
 .projects-item {
   flex: 0 0;
-  margin: 32px;
+  margin: 30px;
 }
 
 .project-card-image {
