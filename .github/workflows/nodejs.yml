@@ -1,4 +1,4 @@
-name: Node CI
+name: Deploy github pages
 
 on:
   push:
@@ -6,31 +6,21 @@ on:
     - workspace
 
 jobs:
-  build:
+  build-and-deploy:
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
+    - uses: actions/checkout@master
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
       env:
-        CI: true
-    - name: copy readme & gitignore
-      run: |
-        cp README.md ./dist/
-        cp .gitignore ./dist/
-    - name: GitHub Pages Deploy
-      uses: maxheld83/ghpages@v0.2.1
-      env:
-        BUILD_DIR: dist/
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: workspace # The branch the action should deploy from.
+        BRANCH: master # The branch the action should deploy to.
+        FOLDER: dist # The folder the action should deploy.
+        BUILD_SCRIPT: npm install && npm run build && cp README.md ./dist/ && cp .gitignore ./dist/ # The build script the action should run prior to deploying.
