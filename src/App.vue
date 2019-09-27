@@ -8,7 +8,7 @@
         <div class="projects-list">
           <div class="projects-item" v-for="i in projects.length" :key="i">
             <el-link
-              href="https://unlucky.ninja/cyberpunk2077-mememaker/"
+              :href="projects[i-1].link"
               target="_blank"
               :underline="false"
             >
