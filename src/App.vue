@@ -62,7 +62,6 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  margin-bottom: 20px;
 }
 
 .projects-list {
@@ -78,8 +77,9 @@ body {
 }
 
 .project-card-image {
+  max-width: 80vw;
   width: 455px;
-  height: 256px;
+  height: auto;
 }
 
 .vertical-center-children {
