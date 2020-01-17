@@ -4,16 +4,12 @@
       <el-header>
         <h1>UnluckyNinja's Whatnot Toolkit</h1>
       </el-header>
-      <el-main>
+      <el-main class="main">
         <div class="projects-list">
           <div class="projects-item" v-for="i in projects.length" :key="i">
-            <el-link
-              :href="projects[i-1].link"
-              target="_blank"
-              :underline="false"
-            >
+            <el-link :href="projects[i-1].link" target="_blank" :underline="false">
               <el-card :body-style="{ padding: '0px' }" shadow="hover">
-                <img class="project-card-image" :src="projects[i-1].asset" />
+                <el-image class="project-card-image" :src="projects[i-1].asset" fit="fit" />
                 <h3>{{projects[i-1].description}}</h3>
               </el-card>
             </el-link>
@@ -35,8 +31,8 @@ import Footer from '@/components/Footer.vue';
 
 @Component({
   components: {
-    Footer,
-  },
+    Footer
+  }
 })
 export default class App extends Vue {
   private projects: Project[] = PROJECTS;
@@ -49,36 +45,39 @@ body {
 }
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100vh;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  .el-container {
+    flex: 1 0;
+    .footer {
+      // justify-self: flex-end;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .projects-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .projects-item {
-  flex: 0 0;
-  margin: 30px;
+  flex: 1 1 250px;
+  margin: 20px;
 }
 
 .project-card-image {
-  max-width: 80vw;
-  width: 455px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 250px;
   height: auto;
 }
 

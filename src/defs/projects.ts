@@ -10,6 +10,11 @@ const projects: Project[] = [
     description: 'Cyberpunk 2077 Meme Generator',
     link: 'https://unlucky.ninja/cyberpunk2077-mememaker/',
   },
+  {
+    asset: require('@/assets/rainbow6siege.jpg'),
+    description: 'Rainbow 6 Siege Map Tool',
+    link: 'https://unlucky.ninja/R6OB/',
+  },
 ];
 
 export default projects;

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { Button, Container, Header, Main, Footer, Card, Row, Col, Link } from 'element-ui'
+import { Button, Container, Header, Main, Footer, Card, Row, Col, Link, Image } from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 
@@ -14,3 +14,4 @@ Vue.use(Card)
 Vue.use(Row)
 Vue.use(Col)
 Vue.use(Link)
+Vue.use(Image)
