@@ -31,8 +31,8 @@ import Footer from '@/components/Footer.vue';
 
 @Component({
   components: {
-    Footer
-  }
+    Footer,
+  },
 })
 export default class App extends Vue {
   private projects: Project[] = PROJECTS;

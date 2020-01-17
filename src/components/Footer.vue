@@ -18,23 +18,23 @@ export default class Footer extends Vue {
     {
       name: 'Weibo @UnNinja',
       image: require('@/assets/weibo_logo.png'),
-      link: 'https://weibo.com/6852898902'
+      link: 'https://weibo.com/6852898902',
     },
     {
       name: 'Bilibili @倒霉の忍者',
       image: require('@/assets/bilibili_logo.png'),
-      link: 'https://space.bilibili.com/205576'
+      link: 'https://space.bilibili.com/205576',
     },
     {
       name: 'Twitter @UnluckyNinja_',
       image: require('@/assets/twitter_logo.svg'),
-      link: 'https://twitter.com/UnluckyNinja_'
+      link: 'https://twitter.com/UnluckyNinja_',
     },
     {
       name: 'Steam @UnluckyNinja',
       icon: 'steam',
-      link: 'https://steamcommunity.com/id/unluckyninja/'
-    }
+      link: 'https://steamcommunity.com/id/unluckyninja/',
+    },
   ];
 }
 </script>
